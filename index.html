@@ -1,28 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Featured SOC Labs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luke Thompson | SOC Analyst Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/avatar.svg">
 </head>
 <body>
-    <h1>Featured SOC Labs</h1>
-    <div class="soc-labs-grid">
-        <a href="/soc-labs/lab-01.html">Lab 01</a>
-        <a href="/soc-labs/lab-02.html">Lab 02</a>
-        <a href="/soc-labs/lab-03.html">Lab 03</a>
-        <a href="/soc-labs/lab-04.html">Lab 04</a>
-        <a href="/soc-labs/lab-05.html">Lab 05</a>
-        <a href="/soc-labs/lab-06.html">Lab 06</a>
-        <a href="/soc-labs/lab-07.html">Lab 07</a>
-        <a href="/soc-labs/lab-08.html">Lab 08</a>
-        <a href="/soc-labs/lab-09.html">Lab 09</a>
-        <a href="/soc-labs/lab-10.html">Lab 10</a>
-        <a href="/soc-labs/lab-11.html">Lab 11</a>
-        <a href="/soc-labs/lab-12.html">Lab 12</a>
-        <a href="/soc-labs/lab-13.html">Lab 13</a>
-        <a href="/soc-labs/lab-14.html">Lab 14</a>
-        <a href="/soc-labs/lab-15.html">Lab 15</a>
+  <header class="topbar">
+    <div class="logo">LT</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#incident-writeups">Incidents</a>
+      <a href="#labs-training">Labs</a>
+      <a href="#osint-tools">Tools</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+    </nav>
+    <button id="theme-toggle" class="ghost-btn" aria-label="Toggle theme">Toggle theme</button>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="about">
+      <div class="hero-text">
+        <p class="eyebrow">SOC Analyst Portfolio</p>
+        <h1>Luke Thompson</h1>
+        <p class="lede">
+          Blue-team focused cybersecurity analyst specializing in detection engineering,
+          investigation, and evidence-driven reporting.
+        </p>
+        <div class="chip-row">
+          <span class="chip">Detection & Response</span>
+          <span class="chip">SIEM Tuning</span>
+          <span class="chip">OSINT Enrichment</span>
+          <span class="chip">Threat Hunting</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="incident-writeups/brute-force-detection.md">Review an investigation</a>
+          <a class="btn" href="resume/resume-guide.md">Resume & guide</a>
+          <a class="btn ghost" href="mailto:contact@lukethompson.com">Email Luke</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/img/avatar.svg" alt="Luke Thompson avatar" class="avatar">
+        <ul class="summary">
+          <li><strong>Focus:</strong> SOC Analyst (Blue Team)</li>
+          <li><strong>Strengths:</strong> Investigation workflow, MITRE mapping, log analysis</li>
+          <li><strong>Tools:</strong> Splunk, Sigma/YARA, OSINT pipelines, EDR triage</li>
+          <li><strong>Goal:</strong> Deliver clear, defensible decisions rooted in evidence</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="incident-writeups" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Evidence-driven</p>
+          <h2>Incident writeups</h2>
+          <p class="muted">Full investigations with log analysis, ATT&CK mapping, and response actions.</p>
+        </div>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <p class="tag">Authentication</p>
+          <h3>Brute Force Detection</h3>
+          <p>Windows log review, anomalous patterns, TP determination, and alert tuning recommendations.</p>
+          <p class="meta">Alert ID: SEC-2025-0847 · MITRE: TA0006, T1110</p>
+          <a class="inline-link" href="incident-writeups/brute-force-detection.md">Read investigation →</a>
+        </article>
+        <article class="card">
+          <p class="tag">Network</p>
+          <h3>Beaconing Investigation</h3>
+          <p>Network flow and OSINT correlation to isolate C2 traffic, contain hosts, and recommend controls.</p>
+          <p class="meta">Alert ID: NET-2025-1423 · MITRE: TA0011, T1071</p>
+          <a class="inline-link" href="incident-writeups/network-beaconing.md">Read investigation →</a>
+        </article>
+        <article class="card">
+          <p class="tag">Endpoint</p>
+          <h3>Malware & EDR Triage</h3>
+          <p>Process lineage review, persistence checks, threat intel enrichment, and remediation actions.</p>
+          <p class="meta">Alert ID: MAL-2025-0921 · MITRE: TA0002, T1059</p>
+          <a class="inline-link" href="incident-writeups/malware-analysis.md">Read investigation →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="labs-training" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Hands-on practice</p>
+          <h2>Labs & training</h2>
+          <p class="muted">Documented exercises showing applied skills and takeaways for SOC operations.</p>
+        </div>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <p class="tag">TryHackMe</p>
+          <h3>Cyber Defense Pathway</h3>
+          <p>50+ rooms completed with SOC workflows, log parsing, Sigma/YARA, and VirusTotal enrichment.</p>
+          <a class="inline-link" href="labs-training/tryhackme-cyber-defense.md">View training log →</a>
+        </article>
+        <article class="card">
+          <p class="tag">DetectionLab</p>
+          <h3>Windows Event Log Analysis</h3>
+          <p>20+ hours of baselining, lateral movement traces, malware execution review, and KQL/PowerShell queries.</p>
+          <a class="inline-link" href="labs-training/detectionlab-event-logs.md">View exercises →</a>
+        </article>
+        <article class="card">
+          <p class="tag">SIEM</p>
+          <h3>Log Parsing & Correlation</h3>
+          <p>Splunk correlation scenarios, alert rule tuning, dashboarding, and performance metrics.</p>
+          <a class="inline-link" href="labs-training/siem-correlation-exercise.md">View SIEM notes →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="osint-tools" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Automation & OSINT</p>
+          <h2>Tools & scripts</h2>
+          <p class="muted">Operational helpers built for enrichment, reconnaissance, and log analysis.</p>
+        </div>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <p class="tag">Python</p>
+          <h3>IP Reputation Enrichment</h3>
+          <p>Automates AbuseIPDB, VirusTotal, OTX, Shodan, and GeoIP lookups with investigation-ready output.</p>
+          <a class="inline-link" href="osint-tools/ip-enrichment.md">Read documentation →</a>
+        </article>
+        <article class="card">
+          <p class="tag">Recon</p>
+          <h3>Domain Intelligence Aggregator</h3>
+          <p>DNS, WHOIS, SSL, subdomain discovery, tech fingerprinting, and phishing domain risk scoring.</p>
+          <a class="inline-link" href="osint-tools/domain-intelligence.md">Read documentation →</a>
+        </article>
+        <article class="card">
+          <p class="tag">Analytics</p>
+          <h3>Log Pattern Analyzer</h3>
+          <p>Z-score and behavioral baselines to surface brute-force, unusual access, and exfiltration anomalies.</p>
+          <a class="inline-link" href="osint-tools/log-analyzer.md">Read documentation →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section dual">
+      <div>
+        <p class="eyebrow">Education</p>
+        <h2>Certifications</h2>
+        <ul class="list">
+          <li><strong>CompTIA A+</strong> — completed (self-study)</li>
+          <li><strong>CompTIA Network+</strong> — completed (self-study)</li>
+          <li><strong>CompTIA Security+</strong> — in progress (target Q1 2026)</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Continued learning</p>
+        <h2>Focus areas</h2>
+        <ul class="list">
+          <li>Threat hunting & hypothesis building</li>
+          <li>Malware analysis & memory triage</li>
+          <li>Network forensics and packet analysis</li>
+          <li>Cloud security fundamentals</li>
+        </ul>
+        <div class="inline-links">
+          <a class="inline-link" href="education/certifications.md">View certification notes →</a>
+          <a class="inline-link" href="education/continued-learning.md">View learning plan →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Open source</p>
+          <h2>Recent GitHub projects</h2>
+          <p class="muted">Automatically pulled from public repositories.</p>
+        </div>
+      </div>
+      <div id="projects-list" class="card-grid projects-grid">
+        <p class="muted">Loading projects…</p>
+      </div>
+    </section>
+
+    <section id="resume" class="section resume">
+      <div class="resume-card">
+        <div>
+          <p class="eyebrow">Resume & contact</p>
+          <h2>Ready for recruiter review</h2>
+          <p class="muted">Download-ready once <code>resume.pdf</code> is added to the repository root. The guide outlines the tailored resume content used across this portfolio.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="resume/resume-guide.md">View resume guide</a>
+          <a class="btn" href="mailto:contact@lukethompson.com">Email Luke</a>
+        </div>
+        <p class="note">Drop a file named <strong>resume.pdf</strong> in the repository root to activate a direct download link here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="muted">Luke Thompson · SOC Analyst Portfolio</p>
+        <p class="muted">Built with evidence-first investigations, labs, and automation.</p>
+      </div>
+      <div class="footer-links">
+        <a href="incident-writeups/brute-force-detection.md">Investigations</a>
+        <a href="labs-training/tryhackme-cyber-defense.md">Labs</a>
+        <a href="osint-tools/ip-enrichment.md">Tools</a>
+        <a href="resume/resume-guide.md">Resume</a>
+      </div>
+      <p class="muted">© <span id="year"></span> Luke Thompson</p>
     </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
