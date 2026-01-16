@@ -1,43 +1,15 @@
-:root{
-  --bg:#0b0f13;
-  --card:#0f1720;
-  --muted:#9aa4b2;
-  --accent:#7dd3fc;
-  --text:#e6eef6;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:Inter,ui-sans-serif,System-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-  background:linear-gradient(180deg,var(--bg),#061018);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-}
-.container{max-width:960px;margin:0 auto;padding:1rem}
-.header-inner{display:flex;align-items:center;gap:1rem;padding:1rem 0}
-.avatar{width:72px;height:72px;border-radius:8px;border:2px solid rgba(255,255,255,0.04)}
-.site-header{border-bottom:1px solid rgba(255,255,255,0.03)}
-.site-header h1{margin:0}
-.btn{display:inline-block;padding:.5rem .75rem;border-radius:6px;background:rgba(125,211,252,0.08);color:var(--accent);text-decoration:none}
-.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:1rem;border-radius:10px;margin-top:1rem;border:1px solid rgba(255,255,255,0.03)}
-.skills-list{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
-.skills-list li{background:rgba(255,255,255,0.03);padding:.4rem .6rem;border-radius:8px}
-#projects-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem}
-.project{padding:.75rem;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
-.project h3{margin:.25rem 0}
-.project p{color:var(--muted);margin:0 0 .5rem 0}
-.project .meta{font-size:.85rem;color:var(--muted);display:flex;gap:.5rem;flex-wrap:wrap}
-.site-footer{padding:2rem 0;text-align:center;color:var(--muted)}
-#theme-toggle{margin-left:auto;padding:.4rem;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--text)}
-
-/* Light theme when body.light class present */
-body.light{
-  --bg:#f7fafc;--card:#ffffff;--muted:#475569;--accent:#0ea5e9;--text:#0b1220;
+h1 {
+  font-size: 24px;
+  color: #333;
 }
 
-@media (max-width:640px){
-  .header-inner{flex-direction:column;align-items:flex-start}
-  .avatar{width:64px;height:64px}
+p {
+  line-height: 1.6;
+  color: #666;
 }
