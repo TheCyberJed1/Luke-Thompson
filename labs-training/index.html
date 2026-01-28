@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labs & Training</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/avatar.svg">
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/markdown-render.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">LT</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../incident-writeups/index.html">Incidents</a>
+      <a href="index.html">Labs</a>
+      <a href="../osint-tools/index.html">Tools</a>
+      <a href="../resume/index.html">Resume</a>
+    </nav>
+    <button id="theme-toggle" class="ghost-btn" type="button" aria-label="Switch to light mode" aria-pressed="false">Toggle theme</button>
+  </header>
+
+  <main class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Hands-on practice</p>
+        <h2>Labs & training</h2>
+        <p class="muted">Select a lab report to view the full writeup.</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <p class="tag">TryHackMe</p>
+        <h3>Cyber Defense Pathway</h3>
+        <p>50+ rooms completed with SOC workflows, log parsing, Sigma/YARA, and VirusTotal enrichment.</p>
+        <a class="inline-link" href="?doc=tryhackme-cyber-defense.md">View training log →</a>
+      </article>
+      <article class="card">
+        <p class="tag">DetectionLab</p>
+        <h3>Windows Event Log Analysis</h3>
+        <p>20+ hours of baselining, lateral movement traces, malware execution review, and KQL/PowerShell queries.</p>
+        <a class="inline-link" href="?doc=detectionlab-event-logs.md">View exercises →</a>
+      </article>
+      <article class="card">
+        <p class="tag">SIEM</p>
+        <h3>Log Parsing & Correlation</h3>
+        <p>Splunk correlation scenarios, alert rule tuning, dashboarding, and performance metrics.</p>
+        <a class="inline-link" href="?doc=siem-correlation-exercise.md">View SIEM notes →</a>
+      </article>
+    </div>
+    <section class="md-content" id="md-content" data-src="tryhackme-cyber-defense.md" data-allowed="tryhackme-cyber-defense.md,detectionlab-event-logs.md,siem-correlation-exercise.md" role="region" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="muted">Luke Thompson · SOC Analyst Portfolio</p>
+        <p class="muted">Built with evidence-first investigations, labs, and automation.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../incident-writeups/index.html">Investigations</a>
+        <a href="index.html">Labs</a>
+        <a href="../osint-tools/index.html">Tools</a>
+        <a href="../resume/index.html">Resume</a>
+      </div>
+      <p class="muted">© <span id="year"></span> Luke Thompson</p>
+    </div>
+  </footer>
+</body>
+</html>

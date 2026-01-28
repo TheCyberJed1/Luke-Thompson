@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/avatar.svg">
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/markdown-render.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">LT</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../incident-writeups/index.html">Incidents</a>
+      <a href="../labs-training/index.html">Labs</a>
+      <a href="../osint-tools/index.html">Tools</a>
+      <a href="../resume/index.html">Resume</a>
+    </nav>
+    <button id="theme-toggle" class="ghost-btn" type="button" aria-label="Switch to light mode" aria-pressed="false">Toggle theme</button>
+  </header>
+
+  <main class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Education</p>
+        <h2>Certifications & learning</h2>
+        <p class="muted">Select a document to view full notes.</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <p class="tag">Certifications</p>
+        <h3>Certification tracker</h3>
+        <p>Completed and in-progress certifications with timelines and notes.</p>
+        <a class="inline-link" href="?doc=certifications.md">View certification notes →</a>
+      </article>
+      <article class="card">
+        <p class="tag">Learning</p>
+        <h3>Continued learning plan</h3>
+        <p>Professional development roadmap with focus areas and timelines.</p>
+        <a class="inline-link" href="?doc=continued-learning.md">View learning plan →</a>
+      </article>
+    </div>
+    <section class="md-content" id="md-content" data-src="certifications.md" data-allowed="certifications.md,continued-learning.md" role="region" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="muted">Luke Thompson · SOC Analyst Portfolio</p>
+        <p class="muted">Built with evidence-first investigations, labs, and automation.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../incident-writeups/index.html">Investigations</a>
+        <a href="../labs-training/index.html">Labs</a>
+        <a href="../osint-tools/index.html">Tools</a>
+        <a href="../resume/index.html">Resume</a>
+      </div>
+      <p class="muted">© <span id="year"></span> Luke Thompson</p>
+    </div>
+  </footer>
+</body>
+</html>
