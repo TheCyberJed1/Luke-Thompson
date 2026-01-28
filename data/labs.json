@@ -1,0 +1,23 @@
+[
+  {
+    "id": "tryhackme-cyber-defense",
+    "tag": "TryHackMe",
+    "title": "Cyber Defense Pathway",
+    "description": "50+ rooms completed with SOC workflows, log parsing, Sigma/YARA, and VirusTotal enrichment.",
+    "docFile": "tryhackme-cyber-defense.md"
+  },
+  {
+    "id": "detectionlab-event-logs",
+    "tag": "DetectionLab",
+    "title": "Windows Event Log Analysis",
+    "description": "20+ hours of baselining, lateral movement traces, malware execution review, and KQL/PowerShell queries.",
+    "docFile": "detectionlab-event-logs.md"
+  },
+  {
+    "id": "siem-correlation-exercise",
+    "tag": "SIEM",
+    "title": "Log Parsing & Correlation",
+    "description": "Splunk correlation scenarios, alert rule tuning, dashboarding, and performance metrics.",
+    "docFile": "siem-correlation-exercise.md"
+  }
+]

@@ -8,6 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="../assets/img/avatar.svg">
   <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/markdown-render.js" defer></script>
+  <script src="../assets/js/dynamic-content.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -16,6 +17,7 @@
       <a href="../index.html">Home</a>
       <a href="../incident-writeups/index.html">Incidents</a>
       <a href="index.html">Labs</a>
+      <a href="../scripts/index.html">Scripts</a>
       <a href="../osint-tools/index.html">Tools</a>
       <a href="../resume/index.html">Resume</a>
     </nav>
@@ -30,25 +32,8 @@
         <p class="muted">Select a lab report to view the full writeup.</p>
       </div>
     </div>
-    <div class="card-grid">
-      <article class="card">
-        <p class="tag">TryHackMe</p>
-        <h3>Cyber Defense Pathway</h3>
-        <p>50+ rooms completed with SOC workflows, log parsing, Sigma/YARA, and VirusTotal enrichment.</p>
-        <a class="inline-link" href="?doc=tryhackme-cyber-defense.md">View training log →</a>
-      </article>
-      <article class="card">
-        <p class="tag">DetectionLab</p>
-        <h3>Windows Event Log Analysis</h3>
-        <p>20+ hours of baselining, lateral movement traces, malware execution review, and KQL/PowerShell queries.</p>
-        <a class="inline-link" href="?doc=detectionlab-event-logs.md">View exercises →</a>
-      </article>
-      <article class="card">
-        <p class="tag">SIEM</p>
-        <h3>Log Parsing & Correlation</h3>
-        <p>Splunk correlation scenarios, alert rule tuning, dashboarding, and performance metrics.</p>
-        <a class="inline-link" href="?doc=siem-correlation-exercise.md">View SIEM notes →</a>
-      </article>
+    <div class="card-grid" id="labs-dynamic-container">
+      <p class="muted">Loading labs…</p>
     </div>
     <section class="md-content" id="md-content" data-src="tryhackme-cyber-defense.md" data-allowed="tryhackme-cyber-defense.md,detectionlab-event-logs.md,siem-correlation-exercise.md" role="region" aria-live="polite"></section>
   </main>

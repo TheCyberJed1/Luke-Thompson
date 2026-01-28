@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Manager - Admin</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/avatar.svg">
+  <script src="assets/js/main.js" defer></script>
+  <style>
+    .admin-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+    .admin-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border, #333);
+    }
+    .admin-tab {
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted, #999);
+      font-size: 1rem;
+      transition: all 0.2s;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+    }
+    .admin-tab.active {
+      color: var(--accent, #00b4d8);
+      border-bottom-color: var(--accent, #00b4d8);
+    }
+    .admin-tab:hover {
+      color: var(--text, #fff);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border, #333);
+      background: var(--bg-surface, #1a1a1a);
+      color: var(--text, #fff);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .admin-list {
+      margin-top: 2rem;
+    }
+    .admin-item {
+      padding: 1rem;
+      border: 1px solid var(--border, #333);
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      background: var(--bg-surface, #1a1a1a);
+    }
+    .admin-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .admin-item-actions button {
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      margin-left: 0.5rem;
+    }
+    .instructions {
+      background: var(--bg-surface, #1a1a1a);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--accent, #00b4d8);
+    }
+    .instructions h3 {
+      margin-top: 0;
+    }
+    .instructions ol {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+    }
+    .instructions li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">LT</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="incident-writeups/index.html">Incidents</a>
+      <a href="labs-training/index.html">Labs</a>
+      <a href="scripts/index.html">Scripts</a>
+      <a href="osint-tools/index.html">Tools</a>
+      <a href="resume/index.html">Resume</a>
+    </nav>
+    <button id="theme-toggle" class="ghost-btn" type="button" aria-label="Switch to light mode" aria-pressed="false">Toggle theme</button>
+  </header>
+
+  <main class="admin-container">
+    <div class="section-heading">
+      <p class="eyebrow">Administration</p>
+      <h1>Content Manager</h1>
+      <p class="muted">Add and manage labs, scripts, and incident writeups dynamically.</p>
+    </div>
+
+    <div class="instructions">
+      <h3>How to use this manager:</h3>
+      <ol>
+        <li>Use the tabs below to add new Labs, Scripts, or Incidents</li>
+        <li>Fill in the form and click "Add Item" to add it to the list</li>
+        <li>Review your items in the list below each form</li>
+        <li>When ready, click "Download JSON" to save the updated data file</li>
+        <li>Upload the downloaded JSON file to the <code>/data/</code> folder in your repository</li>
+        <li>Commit and push the changes to see them live on your site</li>
+      </ol>
+      <p><strong>Note:</strong> This is a client-side tool. Changes are stored in your browser until you download the JSON files.</p>
+    </div>
+
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="labs">Labs & Training</button>
+      <button class="admin-tab" data-tab="scripts">Scripts</button>
+      <button class="admin-tab" data-tab="incidents">Incidents</button>
+    </div>
+
+    <div class="tab-content active" id="labs-tab">
+      <h2>Add New Lab</h2>
+      <form id="lab-form">
+        <div class="form-group">
+          <label for="lab-id">ID (unique identifier, e.g., "my-lab"):</label>
+          <input type="text" id="lab-id" required pattern="[a-z0-9-]+" placeholder="my-awesome-lab">
+        </div>
+        <div class="form-group">
+          <label for="lab-tag">Tag (e.g., "TryHackMe", "SIEM"):</label>
+          <input type="text" id="lab-tag" required placeholder="TryHackMe">
+        </div>
+        <div class="form-group">
+          <label for="lab-title">Title:</label>
+          <input type="text" id="lab-title" required placeholder="My Awesome Lab">
+        </div>
+        <div class="form-group">
+          <label for="lab-description">Description:</label>
+          <textarea id="lab-description" required placeholder="Brief description of the lab..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="lab-doc">Markdown File (e.g., "my-lab.md"):</label>
+          <input type="text" id="lab-doc" required pattern="[a-z0-9-]+\.md" placeholder="my-awesome-lab.md">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Add Lab</button>
+          <button type="button" class="btn" onclick="downloadJSON('labs')">Download Labs JSON</button>
+        </div>
+      </form>
+      <div class="admin-list" id="labs-list"></div>
+    </div>
+
+    <div class="tab-content" id="scripts-tab">
+      <h2>Add New Script</h2>
+      <form id="script-form">
+        <div class="form-group">
+          <label for="script-id">ID (unique identifier):</label>
+          <input type="text" id="script-id" required pattern="[a-z0-9-]+" placeholder="my-script">
+        </div>
+        <div class="form-group">
+          <label for="script-tag">Tag (e.g., "Python", "Bash"):</label>
+          <input type="text" id="script-tag" required placeholder="Python">
+        </div>
+        <div class="form-group">
+          <label for="script-title">Title:</label>
+          <input type="text" id="script-title" required placeholder="My Awesome Script">
+        </div>
+        <div class="form-group">
+          <label for="script-description">Description:</label>
+          <textarea id="script-description" required placeholder="Brief description of the script..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="script-doc">Markdown File (optional):</label>
+          <input type="text" id="script-doc" pattern="[a-z0-9-]+\.md" placeholder="my-script.md">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Add Script</button>
+          <button type="button" class="btn" onclick="downloadJSON('scripts')">Download Scripts JSON</button>
+        </div>
+      </form>
+      <div class="admin-list" id="scripts-list"></div>
+    </div>
+
+    <div class="tab-content" id="incidents-tab">
+      <h2>Add New Incident</h2>
+      <form id="incident-form">
+        <div class="form-group">
+          <label for="incident-id">ID (unique identifier):</label>
+          <input type="text" id="incident-id" required pattern="[a-z0-9-]+" placeholder="my-incident">
+        </div>
+        <div class="form-group">
+          <label for="incident-tag">Tag (e.g., "Network", "Endpoint"):</label>
+          <input type="text" id="incident-tag" required placeholder="Network">
+        </div>
+        <div class="form-group">
+          <label for="incident-title">Title:</label>
+          <input type="text" id="incident-title" required placeholder="My Incident Investigation">
+        </div>
+        <div class="form-group">
+          <label for="incident-description">Description:</label>
+          <textarea id="incident-description" required placeholder="Brief description of the incident..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="incident-meta">Meta Info (optional, e.g., "Alert ID: XXX · MITRE: TA0001"):</label>
+          <input type="text" id="incident-meta" placeholder="Alert ID: SEC-2025-1234 · MITRE: TA0001">
+        </div>
+        <div class="form-group">
+          <label for="incident-doc">Markdown File:</label>
+          <input type="text" id="incident-doc" required pattern="[a-z0-9-]+\.md" placeholder="my-incident.md">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Add Incident</button>
+          <button type="button" class="btn" onclick="downloadJSON('incidents')">Download Incidents JSON</button>
+        </div>
+      </form>
+      <div class="admin-list" id="incidents-list"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="muted">Luke Thompson · SOC Analyst Portfolio</p>
+        <p class="muted">Content management tool for dynamic site updates.</p>
+      </div>
+      <p class="muted">© <span id="year"></span> Luke Thompson</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

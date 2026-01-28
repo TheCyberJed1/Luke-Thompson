@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ip-enrichment",
+    "tag": "Python",
+    "title": "IP Reputation Enrichment",
+    "description": "Automates AbuseIPDB, VirusTotal, OTX, Shodan, and GeoIP lookups with investigation-ready output.",
+    "docFile": "ip-enrichment.md"
+  },
+  {
+    "id": "domain-intelligence",
+    "tag": "Recon",
+    "title": "Domain Intelligence Aggregator",
+    "description": "DNS, WHOIS, SSL, subdomain discovery, tech fingerprinting, and phishing domain risk scoring.",
+    "docFile": "domain-intelligence.md"
+  },
+  {
+    "id": "log-analyzer",
+    "tag": "Analytics",
+    "title": "Log Pattern Analyzer",
+    "description": "Z-score and behavioral baselines to surface brute-force, unusual access, and exfiltration anomalies.",
+    "docFile": "log-analyzer.md"
+  }
+]

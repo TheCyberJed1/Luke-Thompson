@@ -1,0 +1,26 @@
+[
+  {
+    "id": "brute-force-detection",
+    "tag": "Authentication",
+    "title": "Brute Force Detection",
+    "description": "Windows log review, anomalous patterns, TP determination, and alert tuning recommendations.",
+    "meta": "Alert ID: SEC-2025-0847 · MITRE: TA0006, T1110",
+    "docFile": "brute-force-detection.md"
+  },
+  {
+    "id": "network-beaconing",
+    "tag": "Network",
+    "title": "Beaconing Investigation",
+    "description": "Network flow and OSINT correlation to isolate C2 traffic, contain hosts, and recommend controls.",
+    "meta": "Alert ID: NET-2025-1423 · MITRE: TA0011, T1071",
+    "docFile": "network-beaconing.md"
+  },
+  {
+    "id": "malware-analysis",
+    "tag": "Endpoint",
+    "title": "Malware & EDR Triage",
+    "description": "Process lineage review, persistence checks, threat intel enrichment, and remediation actions.",
+    "meta": "Alert ID: MAL-2025-0921 · MITRE: TA0002, T1059",
+    "docFile": "malware-analysis.md"
+  }
+]
