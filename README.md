@@ -12,12 +12,12 @@ What I set by default:
 - Dark theme by default, with a theme toggle (persists in localStorage).
 - Projects section auto-populates from your public GitHub repositories (owner: TheCyberJed1).
 - Contact email is a placeholder (placeholder@example.com). Replace in index.html.
-- Resume link points to /resume.pdf — upload your resume at the repo root as resume.pdf to enable that link.
+- Resume content lives in resume/resume-guide.md (SOC Analyst Tier 1 ATS resume). Export to resume.pdf at the repo root to enable a direct download link.
 
 How to customize:
 - Edit index.html to change your name, bio, tagline, and email.
 - Replace assets/img/avatar.svg with your photo or update the <img> src.
-- To add a resume, upload resume.pdf to the repository root.
+- To add a resume PDF, export resume/resume-guide.md and upload resume.pdf to the repository root.
 
 Publish with GitHub Pages:
 1. Go to https://github.com/TheCyberJed1/Luke-Thompson/settings/pages

@@ -31,7 +31,7 @@
 - **continued-learning.md** - Professional development roadmap
 
 ### 💼 Resume
-- **resume-guide.md** - Professional resume, cover letter, interview prep
+- **resume-guide.md** - SOC Analyst (Tier 1) ATS resume
 
 ---
 
