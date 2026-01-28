@@ -1,5 +1,8 @@
 # SOC Analyst (Tier 1) — ATS Resume (1 Page, Career-Pivot, Purple-Team Lean)
 
+> **Note:** For the best reading experience with proper formatting and styling, view this resume at:  
+> [https://thecyberjed1.github.io/Luke-Thompson/resume/resume-guide.html](https://thecyberjed1.github.io/Luke-Thompson/resume/resume-guide.html)
+
 **Luke Thompson (TheCyberJed1)**  
 Fort Myers, FL • 239-507-2538 • lukengo435@gmail.com  
 Portfolio: https://thecyberjed1.github.io/Luke-Thompson • GitHub: https://github.com/TheCyberJed1 • LinkedIn: https://www.linkedin.com/in/luke-thompson-b4a0653a4/  
