@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Writeups</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/avatar.svg">
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/markdown-render.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">LT</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="index.html">Incidents</a>
+      <a href="../labs-training/index.html">Labs</a>
+      <a href="../osint-tools/index.html">Tools</a>
+      <a href="../resume/index.html">Resume</a>
+    </nav>
+    <button id="theme-toggle" class="ghost-btn" type="button" aria-label="Switch to light mode" aria-pressed="false">Toggle theme</button>
+  </header>
+
+  <main class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Evidence-driven</p>
+        <h2>Incident writeups</h2>
+        <p class="muted">Select a report to view the full analysis.</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <p class="tag">Authentication</p>
+        <h3>Brute Force Detection</h3>
+        <p>Windows log review, anomalous patterns, TP determination, and alert tuning recommendations.</p>
+        <p class="meta">Alert ID: SEC-2025-0847 · MITRE: TA0006, T1110</p>
+        <a class="inline-link" href="?doc=brute-force-detection.md">Read investigation →</a>
+      </article>
+      <article class="card">
+        <p class="tag">Network</p>
+        <h3>Beaconing Investigation</h3>
+        <p>Network flow and OSINT correlation to isolate C2 traffic, contain hosts, and recommend controls.</p>
+        <p class="meta">Alert ID: NET-2025-1423 · MITRE: TA0011, T1071</p>
+        <a class="inline-link" href="?doc=network-beaconing.md">Read investigation →</a>
+      </article>
+      <article class="card">
+        <p class="tag">Endpoint</p>
+        <h3>Malware & EDR Triage</h3>
+        <p>Process lineage review, persistence checks, threat intel enrichment, and remediation actions.</p>
+        <p class="meta">Alert ID: MAL-2025-0921 · MITRE: TA0002, T1059</p>
+        <a class="inline-link" href="?doc=malware-analysis.md">Read investigation →</a>
+      </article>
+    </div>
+    <section class="md-content" id="md-content" data-src="brute-force-detection.md" data-allowed="brute-force-detection.md,network-beaconing.md,malware-analysis.md" role="region" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="muted">Luke Thompson · SOC Analyst Portfolio</p>
+        <p class="muted">Built with evidence-first investigations, labs, and automation.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Investigations</a>
+        <a href="../labs-training/index.html">Labs</a>
+        <a href="../osint-tools/index.html">Tools</a>
+        <a href="../resume/index.html">Resume</a>
+      </div>
+      <p class="muted">© <span id="year"></span> Luke Thompson</p>
+    </div>
+  </footer>
+</body>
+</html>

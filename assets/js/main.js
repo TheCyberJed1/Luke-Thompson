@@ -1,24 +1,34 @@
 const GITHUB_USER = 'TheCyberJed1';
 
 document.addEventListener('DOMContentLoaded', ()=>{
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const year = document.getElementById('year');
+  if(year) year.textContent = new Date().getFullYear();
   initThemeToggle();
-  loadProjects();
+  if(document.getElementById('projects-list')) loadProjects();
 });
 
 function initThemeToggle(){
   const btn = document.getElementById('theme-toggle');
+  if(!btn) return;
   const saved = localStorage.getItem('theme');
   if(saved === 'light') document.body.classList.add('light');
+  const syncThemeLabel = ()=>{
+    const isLight = document.body.classList.contains('light');
+    btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+    btn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+  };
+  syncThemeLabel();
   btn.addEventListener('click', ()=>{
     document.body.classList.toggle('light');
     const isLight = document.body.classList.contains('light');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    syncThemeLabel();
   });
 }
 
 async function loadProjects(){
   const el = document.getElementById('projects-list');
+  if(!el) return;
   try{
     const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`);
     if(!res.ok) throw new Error('GitHub API error');
